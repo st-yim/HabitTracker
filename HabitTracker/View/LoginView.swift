@@ -12,6 +12,7 @@ struct LoginView: View {
     @StateObject var viewModel: LoginViewModel = LoginViewModel()
 
     var body: some View {
+        
         VStack {
             Spacer()
 
@@ -35,19 +36,26 @@ struct LoginView: View {
             }
             .padding()
 
-            Button(action: {
-                viewModel.loginPress()
-            }) {
-                Text("Login")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.blue)
-                    .cornerRadius(8.0)
+            if viewModel.isLoading {
+                           ProgressView("Logging in...")
+                               .progressViewStyle(CircularProgressViewStyle())
+                               .foregroundColor(.blue)
+                               .padding()
+            } else {
+                Button(action: {
+                    viewModel.loginPress()
+                }) {
+                    Text("Login")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.blue)
+                        .cornerRadius(8.0)
+                }
+                .padding()
+                .disabled(viewModel.isLoading)
+                .opacity(viewModel.isLoading ? 0.6 : 1)
             }
-            .padding()
-            .disabled(viewModel.isLoading)
-            .opacity(viewModel.isLoading ? 0.6 : 1)
 
             HStack {
                 Spacer()
@@ -63,6 +71,20 @@ struct LoginView: View {
             Spacer()
         }
         .padding()
+        .onTapGesture {
+            viewModel.errorMessage = nil
+        }
+        .overlay(
+            // Overlay a view to show the error message
+            Group {
+                if let errorMessage = viewModel.errorMessage {
+                    ErrorView(message: errorMessage, onClose: {
+                        // Close the error message when the overlay is tapped
+                        viewModel.errorMessage = nil
+                    })
+                }
+            }
+        )
     }
 }
 

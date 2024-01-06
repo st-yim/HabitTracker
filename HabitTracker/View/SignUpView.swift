@@ -40,20 +40,26 @@ struct SignUpView: View {
             }
             .padding()
 
-            Button(action: {
-                viewModel.signUpPress()
-            }) {
-                Text("Sign Up")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.green)
-                    .cornerRadius(8.0)
+            if viewModel.isLoading {
+                           ProgressView("Signing up...")
+                               .progressViewStyle(CircularProgressViewStyle())
+                               .foregroundColor(.blue)
+                               .padding()
+            } else {
+                Button(action: {
+                    viewModel.signUpPress()
+                }) {
+                    Text("Sign Up")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .background(Color.green)
+                        .cornerRadius(8.0)
+                }
+                .padding()
+                .disabled(viewModel.isLoading)
+                .opacity(viewModel.isLoading ? 0.6 : 1)
             }
-            .padding()
-            .disabled(viewModel.isLoading)
-            .opacity(viewModel.isLoading ? 0.6 : 1)
-
             Spacer()
         }
         .padding()

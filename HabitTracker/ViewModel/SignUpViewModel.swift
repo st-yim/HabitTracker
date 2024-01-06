@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 class SignUpViewModel: ObservableObject {
     
@@ -21,6 +22,18 @@ class SignUpViewModel: ObservableObject {
             errorMessage = "Please enter all the details"
         } else if password != confirmPassword {
             errorMessage = "Password and confirm password does not match"
+        }
+        isLoading = true
+        Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+            guard let self else { return }
+            self.isLoading = false
+            if let error {
+                errorMessage = error.localizedDescription
+                return
+            }
+            if let _ = authResult?.user {
+                AuthManager.shared.isLoggedIn = true
+            }
         }
     }
     

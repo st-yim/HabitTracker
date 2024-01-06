@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct HabitTrackerApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    @ObservedObject var authManager = AuthManager.shared
+    
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            NavigationView {
-                LoginView()
+            if authManager.isLoggedIn {
+                ContentView()
+            } else {
+                NavigationView {
+                    LoginView()
+                }
             }
         }
+    }
+}
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        FirebaseApp.configure()
+        AuthManager.shared.checkAuthenticationStatus()
+        return true
     }
 }

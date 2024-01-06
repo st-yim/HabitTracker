@@ -12,13 +12,13 @@ struct ContentView: View {
     @ObservedObject var viewModel = HabitTrackerViewModel()
     
     var activeHabits: [Habit] {
-       viewModel.habits.filter { $0.isActive }
+        viewModel.habits.filter { $0.isActive }
     }
-
+    
     var inactiveHabits: [Habit] {
-       viewModel.habits.filter { !$0.isActive }
+        viewModel.habits.filter { !$0.isActive }
     }
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -28,7 +28,7 @@ struct ContentView: View {
                             Image(systemName: "bolt.fill")
                             Text("Active")
                         }
-
+                    
                     HabitListView(title: "Inactive", habits: inactiveHabits)
                         .tabItem {
                             Image(systemName: "stop.fill")
@@ -36,10 +36,10 @@ struct ContentView: View {
                         }
                 }
                 Spacer()
-
+                
                 HStack {
                     Spacer()
-
+                    
                     Button(action: {
                         showingAddHabitView.toggle()
                     }) {
@@ -49,9 +49,9 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.green)
                     }
-
+                    
                     Spacer()
-
+                    
                     Button(action: {
                         viewModel.clearHabits()
                     }) {
@@ -61,8 +61,21 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.blue)
                     }
-
+                    
                     Spacer()
+                    
+                    // Signout Button
+                    Button(action: {
+                        AuthManager.shared.signout()
+                    }) {
+                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    
                 }
                 .padding()
             }
