@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BCBB95152B497CD30040EADA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95142B497CD30040EADA /* LoginView.swift */; };
+		BCBB95172B497DED0040EADA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95162B497DED0040EADA /* LoginViewModel.swift */; };
+		BCBB95192B497EF90040EADA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95182B497EF90040EADA /* SignUpView.swift */; };
+		BCBB951B2B497F380040EADA /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB951A2B497F380040EADA /* SignUpViewModel.swift */; };
+		BCBB951D2B49809F0040EADA /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB951C2B49809F0040EADA /* ErrorView.swift */; };
 		FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */; };
 		FABE833E2B47634E00996F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833D2B47634E00996F85 /* ContentView.swift */; };
 		FABE834A2B4763C100996F85 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83492B4763C100996F85 /* HabitModel.swift */; };
@@ -20,6 +25,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BCBB95142B497CD30040EADA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		BCBB95162B497DED0040EADA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BCBB95182B497EF90040EADA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		BCBB951A2B497F380040EADA /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		BCBB951C2B49809F0040EADA /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		FABE83382B47634E00996F85 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		FABE833D2B47634E00996F85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				FABE834B2B47672E00996F85 /* HabitTrackerViewModel.swift */,
+				BCBB95162B497DED0040EADA /* LoginViewModel.swift */,
+				BCBB951A2B497F380040EADA /* SignUpViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -97,6 +109,9 @@
 				FABE83512B47AF2B00996F85 /* HabitListView.swift */,
 				FABE83572B48FC8A00996F85 /* HabitRowView.swift */,
 				FABE83552B48FC7000996F85 /* SectionView.swift */,
+				BCBB95142B497CD30040EADA /* LoginView.swift */,
+				BCBB95182B497EF90040EADA /* SignUpView.swift */,
+				BCBB951C2B49809F0040EADA /* ErrorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,8 +190,13 @@
 				FABE83562B48FC7000996F85 /* SectionView.swift in Sources */,
 				FABE83502B47ACD300996F85 /* HabitDetailView.swift in Sources */,
 				FABE834C2B47672E00996F85 /* HabitTrackerViewModel.swift in Sources */,
+				BCBB951B2B497F380040EADA /* SignUpViewModel.swift in Sources */,
 				FABE83522B47AF2B00996F85 /* HabitListView.swift in Sources */,
 				FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */,
+				BCBB95192B497EF90040EADA /* SignUpView.swift in Sources */,
+				BCBB951D2B49809F0040EADA /* ErrorView.swift in Sources */,
+				BCBB95172B497DED0040EADA /* LoginViewModel.swift in Sources */,
+				BCBB95152B497CD30040EADA /* LoginView.swift in Sources */,
 				FABE834E2B476BEE00996F85 /* AddHabitView.swift in Sources */,
 				FABE83542B488A2600996F85 /* CreateHabitView.swift in Sources */,
 			);
