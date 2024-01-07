@@ -28,6 +28,7 @@ struct AddHabitView: View {
     @State private var newHabitTitle = ""
     @State private var selectedImageName: String? // Store the selected image name
     @State private var showCreateHabitView = false
+    @State private var customHabitName = ""
     
     var body: some View {
         ZStack {
@@ -38,25 +39,32 @@ struct AddHabitView: View {
                         HStack {
                             Image(systemName: habit.isSelected ? "checkmark.circle.fill" : "circle")
                                 .foregroundColor(habit.isSelected ? .blue : .gray)
-                                .onTapGesture {
-                                    habits[index].isSelected.toggle()
-                                }
                             
                             Text(habit.title)
                                 .opacity(showCreateHabitView ? 0 : 1) // Hide the title when CreateHabitView is active
                             Spacer()
                             Image(systemName: habit.imageName) // Assuming imageName represents the symbol name
                         }
+                        .onTapGesture {
+                            habits[index].isSelected.toggle()
+                        }
                     }
                 }
-                .blur(radius: showCreateHabitView ? 3 : 0) // Blur the background when CreateHabitView is active
+                .opacity(showCreateHabitView ? 0 : 1) // Blur the background when CreateHabitView is active
                 .cornerRadius(10)
                 .padding()
                 
                 Button("Create Your Own Habit") {
-                    showCreateHabitView.toggle()
+                    withAnimation {
+                        showCreateHabitView.toggle()
+                    }
                 }
-                .padding()
+                .foregroundColor(.white)
+                .frame(maxWidth: .infinity)
+                .frame(height: 35)
+                .background(Color.blue)
+                .cornerRadius(8.0)
+                .padding(.horizontal, 16)
                 .opacity(showCreateHabitView ? 0 : 1) // Hide the button when CreateHabitView is active
                 .disabled(showCreateHabitView) // Disable the button when CreateHabitView is active
                 
@@ -64,26 +72,39 @@ struct AddHabitView: View {
                     ZStack {
                         Color.white
                             .opacity(0.6) // Semi-transparent background behind the CreateHabitView
-
+                        
                         VStack {
                             Text("Create Your Own Habit")
                                 .padding()
                                 .onTapGesture {
-                                    showCreateHabitView.toggle()
+                                    withAnimation {
+                                        showCreateHabitView.toggle()
+                                    }
                                 }
-
+                            
                             // Other custom habit creation interface
-                            TextField("Enter Habit Name", text: .constant(""))
+                            TextField("Enter Habit Name", text: $customHabitName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding()
-
+                            
                             Spacer()
-
+                            
                             Button("Add") {
                                 // Logic to add custom habit
-                                showCreateHabitView.toggle()
+                                viewModel.addHabit(title: customHabitName, imageName: "info.circle")
+                                isPresented = false
+//                                withAnimation {
+//                                    showCreateHabitView.toggle()
+//                                }
                             }
+                            .foregroundColor(.white)
                             .padding()
+                            .frame(maxWidth: .infinity)
+                            .frame(height: 35)
+                            .background(Color.blue)
+                            .cornerRadius(8.0)
+                            .opacity(customHabitName.isEmpty ? 0.5 : 1)
+                            .disabled(customHabitName.isEmpty)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color.white)
@@ -92,16 +113,26 @@ struct AddHabitView: View {
                     }
                 }
                 
-                Button("Add Selected") {
+                Button(action: {
                     let selectedHabits = habits.filter { $0.isSelected }
                     for habit in selectedHabits {
                         viewModel.addHabit(title: habit.title, imageName: habit.imageName)
                     }
                     isPresented = false
+                }) {
+                    Text("Add Selected")
+                        .foregroundColor(.white)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 35)
+                        .background(Color.blue)
+                        .cornerRadius(8.0)
+                        .disabled(habits.filter({ $0.isSelected }).isEmpty)
+                        .opacity(habits.filter({ $0.isSelected }).isEmpty ? 0.5 : 1)
                 }
-                .padding()
                 .opacity(showCreateHabitView ? 0 : 1) // Hide the button when CreateHabitView is active
                 .disabled(showCreateHabitView) // Disable the button when CreateHabitView is active
+                .padding(.horizontal)
             }
             .background(Color.white)
             .cornerRadius(10)
