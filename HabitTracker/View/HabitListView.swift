@@ -15,9 +15,10 @@ struct HabitListView: View {
     var body: some View {
         List {
             ForEach(habits) { habit in
-                NavigationLink(destination: HabitDetailView(habit: habit)) {
-                    HabitRowView(habit: habit)
+                NavigationLink(destination: HabitDetailView(description: habit.description ?? "")) {
+                    HabitRowView(habit: habit)  
                 }
+                .listRowBackground(Color.clear)
             }
         }
         .background(.gray.opacity(0.1))
