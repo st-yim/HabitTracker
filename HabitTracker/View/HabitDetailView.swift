@@ -9,8 +9,7 @@ import SwiftUI
 
 struct HabitDetailView: View {
     
-    @State private var description: String = ""
-    let habit: Habit
+    @State var description: String = ""
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
@@ -18,6 +17,19 @@ struct HabitDetailView: View {
             TextField("Enter Description", text: $description)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
+            
+            Button(action: {
+                presentationMode.wrappedValue.dismiss()
+            }) {
+                Text("Save")
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 35)
+                    .background(Color.blue)
+                    .cornerRadius(8.0)
+            }
+            .padding(.horizontal)
         }
         .padding()
         .navigationBarTitle(Text(""), displayMode: .inline)
@@ -25,5 +37,5 @@ struct HabitDetailView: View {
 }
 
 #Preview {
-    HabitDetailView(habit: Habit(imageName: "moon.fill", title: "Hola", isSelected: false, isActive: false))
+    HabitDetailView(description: "Hello")
 }

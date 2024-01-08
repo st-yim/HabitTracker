@@ -35,6 +35,7 @@ struct ContentView: View {
                             Text("Inactive")
                         }
                 }
+                .padding(.top, 12)
                 Spacer()
                 
                 HStack {
@@ -81,13 +82,14 @@ struct ContentView: View {
             }
             .navigationBarTitle("Habit Tracker")
             .padding()
+            .frame(maxWidth: .infinity)
+            .background(Color.gray.opacity(0.1)) // Optional background color for better visibility
             .sheet(isPresented: $showingAddHabitView) {
                 NavigationView {
                     AddHabitView(isPresented: $showingAddHabitView, viewModel: viewModel)
                 }
             }
         }
-        .background(Color.gray.opacity(0.1)) // Optional background color for better visibility
     }
 }
 

@@ -13,17 +13,15 @@ struct HabitListView: View {
     @ObservedObject var viewModel = HabitTrackerViewModel()
 
     var body: some View {
-        NavigationView {
-            List {
-                ForEach(habits) { habit in
-                    NavigationLink(destination: HabitDetailView(habit: habit)) {
-                        HabitRowView(habit: habit)
-                    }
+        List {
+            ForEach(habits) { habit in
+                NavigationLink(destination: HabitDetailView(description: habit.description ?? "")) {
+                    HabitRowView(habit: habit)  
                 }
+                .listRowBackground(Color.clear)
             }
-            .navigationBarTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
-            .font(.custom("Helvetica Neue", size: 20))
         }
+        .background(.gray.opacity(0.1))
+        .font(.custom("Helvetica Neue", size: 20))
     }
 }
