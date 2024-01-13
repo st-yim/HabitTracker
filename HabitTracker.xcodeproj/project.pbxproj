@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BC4A13EB2B52758900495CAC /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4A13EA2B52758900495CAC /* HabitDetailViewModel.swift */; };
 		BCBB95152B497CD30040EADA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95142B497CD30040EADA /* LoginView.swift */; };
 		BCBB95172B497DED0040EADA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95162B497DED0040EADA /* LoginViewModel.swift */; };
 		BCBB95192B497EF90040EADA /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95182B497EF90040EADA /* SignUpView.swift */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BC4A13EA2B52758900495CAC /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
 		BCBB95142B497CD30040EADA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		BCBB95162B497DED0040EADA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		BCBB95182B497EF90040EADA /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				FABE834B2B47672E00996F85 /* HabitTrackerViewModel.swift */,
 				BCBB95162B497DED0040EADA /* LoginViewModel.swift */,
 				BCBB951A2B497F380040EADA /* SignUpViewModel.swift */,
+				BC4A13EA2B52758900495CAC /* HabitDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				FABE83502B47ACD300996F85 /* HabitDetailView.swift in Sources */,
 				BCBB95602B4C4B9A0040EADA /* RealmManager.swift in Sources */,
 				FABE834C2B47672E00996F85 /* HabitTrackerViewModel.swift in Sources */,
+				BC4A13EB2B52758900495CAC /* HabitDetailViewModel.swift in Sources */,
 				BCBB951B2B497F380040EADA /* SignUpViewModel.swift in Sources */,
 				FABE83522B47AF2B00996F85 /* HabitListView.swift in Sources */,
 				FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */,

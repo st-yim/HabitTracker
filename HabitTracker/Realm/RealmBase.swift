@@ -80,4 +80,13 @@ extension RealmBase {
             self?.realmObj?.add(object)
         })
     }
+    
+    public func updateProperty<T: Object, Value>(_ type: T.Type, id: UUID, property: String, value: Value) {
+        guard let object = realmObj?.object(ofType: type, forPrimaryKey: id) else {
+            return
+        }
+        realmObj?.writeAsync {
+            object.setValue(value, forKey: property)
+        }
+    }
 }

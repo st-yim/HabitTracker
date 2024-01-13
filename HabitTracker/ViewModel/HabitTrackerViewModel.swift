@@ -29,12 +29,17 @@ extension HabitTrackerViewModel {
         updateList()
     }
     
+    func toggleActiveInactive(_ habit: Habit) {
+        RealmManager.shared.updateHabitIsActive(id: habit.id, isActive: !habit.isActive)
+        updateList()
+    }
     func updateList() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01, execute: {
             let habits = RealmManager.shared.getHabitsFromRealm()
-            self.activeHabits = habits.filter { $0.isActive }
-            self.inactiveHabits = habits.filter { !$0.isActive }
-            self.objectWillChange.send()
+            withAnimation {
+                self.activeHabits = habits.filter { $0.isActive }
+                self.inactiveHabits = habits.filter { !$0.isActive }
+            }
         })
         
     }

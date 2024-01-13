@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct HabitRowView: View {
-    @Binding var habit: Habit
+    var habit: Habit
     let onDeleteHabit: (Habit) -> Void
+    let onActiveInactiveHabit: (Habit) -> Void
     
     var body: some View {
         VStack {
@@ -25,28 +26,40 @@ struct HabitRowView: View {
                     .frame(minHeight: 40)
                     .background(
                         RoundedRectangle(cornerRadius: 8)
-                            .foregroundColor(habit.isActive ? .green : .gray) // Set the background based on isActive state
+                            .foregroundColor(habit.isActive ? .blue.opacity(0.7) : .gray) // Set the background based on isActive state
                     )
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     .shadow(radius: 4)
-                    .contentShape(Rectangle())
                 
                 Spacer()
                 
-                Image(systemName: "trash")
-                    .foregroundColor(.red)
-                .padding(8)
-                .onTapGesture {
-                    onDeleteHabit(habit)
-                }
-                .contentShape(Rectangle())
             }
             
+            HStack {
+                
+                Image(systemName: habit.isActive ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.green)
+                    .onTapGesture {
+                        onActiveInactiveHabit(habit)
+                    }
+                
+                
+                Image(systemName: "trash")
+                    .resizable()
+                    .frame(width: 25, height: 25)
+                    .foregroundColor(.red)
+                    .padding(8)
+                    .onTapGesture {
+                        onDeleteHabit(habit)
+                    }
+            }
         }
     }
 }
 
 #Preview {
-    HabitRowView(habit: .constant(Habit(id: UUID(), imageName: "moon.fill", title: "Sleep", isSelected: true) ), onDeleteHabit: { _ in})
+    HabitRowView(habit: Habit(id: UUID(), imageName: "moon.fill", title: "Sleep", isSelected: true), onDeleteHabit: { _ in}, onActiveInactiveHabit: {_ in})
 }

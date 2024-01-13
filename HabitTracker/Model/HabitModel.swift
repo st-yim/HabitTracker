@@ -14,7 +14,7 @@ struct Habit: Identifiable {
     var title: String
     var isSelected: Bool
     var isActive = true
-    var description: String = ""
+    var habitDescription: String = ""
 }
 
 struct CreatedHabit: Identifiable {
@@ -23,7 +23,7 @@ struct CreatedHabit: Identifiable {
     var title: String
     var isSelected: Bool
     var isActive = true
-    var description: String?
+    var habitDescription: String?
 }
 
 

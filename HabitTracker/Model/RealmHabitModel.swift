@@ -31,7 +31,7 @@ extension RealmHabitModel {
                      title: self.title,
                      isSelected: self.isSelected,
                      isActive: self.isActive,
-                     description: self.description)
+                     habitDescription: self.habitDescription)
     }
 }
 
@@ -44,6 +44,6 @@ extension RealmHabitModel {
         self.title = habit.title
         self.isSelected = habit.isSelected
         self.isActive = habit.isActive
-        self.habitDescription = habit.description
+        self.habitDescription = habit.habitDescription
     }
 }

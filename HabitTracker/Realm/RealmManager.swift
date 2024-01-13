@@ -78,4 +78,29 @@ extension RealmManager {
         deleteDataById(type: RealmHabitModel.self, id: id)
     }
 
+    func updateHabitIsActive(id: UUID, isActive: Bool) {
+        guard let habit = realmBase.fetchById(data: RealmHabitModel.self, id: id) else {
+            // Handle the case when the habit with the specified ID is not found
+            return
+        }
+
+        realmBase.updateProperty(RealmHabitModel.self, id: id, property: "isActive", value: isActive)
+    }
+    
+    func updateHabitDescription(id: UUID, description: String) {
+        guard let habit = realmBase.fetchById(data: RealmHabitModel.self, id: id) else {
+            // Handle the case when the habit with the specified ID is not found
+            return
+        }
+
+        realmBase.updateProperty(RealmHabitModel.self, id: id, property: "habitDescription", value: description)
+    }
+    
+    func getHabitById(id: UUID) -> Habit? {
+        if let realmHabit = realmBase.fetchById(data: RealmHabitModel.self, id: id) {
+            return realmHabit.toHabit()
+        } else {
+            return nil
+        }
+    }
 }

@@ -17,8 +17,9 @@ struct ContentView: View {
                 TabView {
                     HabitListView(habits: $viewModel.activeHabits, onDeleteHabit: { habit in
                         viewModel.deleteHabit(habit)
+                    }, onActiveInactiveHabit: { habit in
+                        viewModel.toggleActiveInactive(habit)
                     })
-                    .background(.gray.opacity(0.1))
                     .font(.custom("Helvetica Neue", size: 20))
                     .onAppear(perform: {
                         viewModel.updateList()
@@ -30,13 +31,14 @@ struct ContentView: View {
                     
                     HabitListView(habits: $viewModel.inactiveHabits, onDeleteHabit: { habit in
                         viewModel.deleteHabit(habit)
+                    }, onActiveInactiveHabit: { habit in
+                        viewModel.toggleActiveInactive(habit)
                     })
                     .tabItem {
                         Image(systemName: "stop.fill")
                         Text("Inactive")
                     }
                 }
-                .padding(.top, 12)
                 Spacer()
                 
                 HStack {
@@ -79,7 +81,7 @@ struct ContentView: View {
                     }
                     
                 }
-                .padding()
+                .padding(.horizontal)
             }
             .navigationBarTitle("Habit Tracker")
             .padding()
