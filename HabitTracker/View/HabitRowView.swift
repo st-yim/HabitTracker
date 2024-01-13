@@ -39,8 +39,9 @@ struct HabitRowView: View {
                 }
                 
                 HStack {
-                    Image(systemName: habit.isActive ? "checkmark.circle.fill" : "xmark.circle.fill")
+                    Image(systemName: habit.isActive ? "stop.fill" : "bolt.fill")
                         .resizable()
+                        .scaledToFit()
                         .frame(width: 25, height: 25)
                         .foregroundColor(.green)
                         .onTapGesture {
