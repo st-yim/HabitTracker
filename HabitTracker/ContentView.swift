@@ -10,13 +10,17 @@ import SwiftUI
 struct ContentView: View {
     @State private var showingAddHabitView = false
     @StateObject var viewModel = HabitTrackerViewModel()
+    @State private var showClearAllAlert = false
+    @State private var showDeletHabitAlert = false
+    @State private var habitToDelete: Habit = Habit(id: UUID(), imageName: "", title: "", isSelected: false)
     
     var body: some View {
         NavigationView {
             VStack {
                 TabView {
                     HabitListView(habits: $viewModel.activeHabits, onDeleteHabit: { habit in
-                        viewModel.deleteHabit(habit)
+                        habitToDelete = habit
+                        showDeletHabitAlert = true
                     }, onActiveInactiveHabit: { habit in
                         viewModel.toggleActiveInactive(habit)
                     })
@@ -30,7 +34,8 @@ struct ContentView: View {
                     }
                     
                     HabitListView(habits: $viewModel.inactiveHabits, onDeleteHabit: { habit in
-                        viewModel.deleteHabit(habit)
+                        habitToDelete = habit
+                        showDeletHabitAlert = true
                     }, onActiveInactiveHabit: { habit in
                         viewModel.toggleActiveInactive(habit)
                     })
@@ -38,6 +43,16 @@ struct ContentView: View {
                         Image(systemName: "stop.fill")
                         Text("Inactive")
                     }
+                }
+                .alert(isPresented: $showDeletHabitAlert) {
+                    Alert(
+                        title: Text("Delete Habit"),
+                        message: Text("Are you sure you want to delete this habit?"),
+                        primaryButton: .destructive(Text("Delete")) {
+                            viewModel.deleteHabit(habitToDelete)
+                        },
+                        secondaryButton: .cancel(Text("Cancel"))
+                    )
                 }
                 Spacer()
                 
@@ -57,13 +72,23 @@ struct ContentView: View {
                     Spacer()
                     
                     Button(action: {
-//                        viewModel.clearHabits()
+                        showClearAllAlert = true
                     }) {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                             .foregroundColor(.blue)
+                    }
+                    .alert(isPresented: $showClearAllAlert) {
+                        Alert(
+                            title: Text("Clear All Habits"),
+                            message: Text("Are you sure you want to clear all habits?"),
+                            primaryButton: .destructive(Text("Clear")) {
+                                viewModel.clearAllHabit()
+                            },
+                            secondaryButton: .cancel(Text("Cancel"))
+                        )
                     }
                     
                     Spacer()

@@ -33,8 +33,9 @@ extension HabitTrackerViewModel {
         RealmManager.shared.updateHabitIsActive(id: habit.id, isActive: !habit.isActive)
         updateList()
     }
+    
     func updateList() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1, execute: {
             let habits = RealmManager.shared.getHabitsFromRealm()
             withAnimation {
                 self.activeHabits = habits.filter { $0.isActive }
@@ -42,5 +43,10 @@ extension HabitTrackerViewModel {
             }
         })
         
+    }
+    
+    func clearAllHabit() {
+        RealmManager.shared.deleteAll()
+        updateList()
     }
 }
