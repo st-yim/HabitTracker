@@ -9,20 +9,33 @@ import Combine
 import SwiftUI
 
 class HabitTrackerViewModel: ObservableObject {
-    @Published var habits: [Habit] = []
+
+    @Published var activeHabits: [Habit] = []
+    @Published var inactiveHabits: [Habit] = []
+    
+}
+
+//MARK: - Habit operations
+extension HabitTrackerViewModel {
     
     func addHabit(title: String, imageName: String) {
-        let newHabit = Habit(imageName: imageName, title: title, isSelected: true)
-        habits.append(newHabit)
+        let newHabit = Habit(id: UUID() , imageName: imageName, title: title, isSelected: true)
+        RealmManager.shared.storeHabitToRealm(habit: newHabit)
+        updateList()
     }
     
     func deleteHabit(_ habit: Habit) {
-        if let index = habits.firstIndex(where: { $0.id == habit.id }) {
-            habits.remove(at: index)
-        }
+        RealmManager.shared.deleteHabitById(id: habit.id)
+        updateList()
     }
     
-    func clearHabits() {
-        habits.removeAll()
+    func updateList() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+            let habits = RealmManager.shared.getHabitsFromRealm()
+            self.activeHabits = habits.filter { $0.isActive }
+            self.inactiveHabits = habits.filter { !$0.isActive }
+            self.objectWillChange.send()
+        })
+        
     }
 }

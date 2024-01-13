@@ -9,31 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingAddHabitView = false
-    @ObservedObject var viewModel = HabitTrackerViewModel()
-    
-    var activeHabits: [Habit] {
-        viewModel.habits.filter { $0.isActive }
-    }
-    
-    var inactiveHabits: [Habit] {
-        viewModel.habits.filter { !$0.isActive }
-    }
+    @StateObject var viewModel = HabitTrackerViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 TabView {
-                    HabitListView(title: "Active", habits: activeHabits)
-                        .tabItem {
-                            Image(systemName: "bolt.fill")
-                            Text("Active")
-                        }
+                    HabitListView(habits: $viewModel.activeHabits, onDeleteHabit: { habit in
+                        viewModel.deleteHabit(habit)
+                    })
+                    .background(.gray.opacity(0.1))
+                    .font(.custom("Helvetica Neue", size: 20))
+                    .onAppear(perform: {
+                        viewModel.updateList()
+                    })
+                    .tabItem {
+                        Image(systemName: "bolt.fill")
+                        Text("Active")
+                    }
                     
-                    HabitListView(title: "Inactive", habits: inactiveHabits)
-                        .tabItem {
-                            Image(systemName: "stop.fill")
-                            Text("Inactive")
-                        }
+                    HabitListView(habits: $viewModel.inactiveHabits, onDeleteHabit: { habit in
+                        viewModel.deleteHabit(habit)
+                    })
+                    .tabItem {
+                        Image(systemName: "stop.fill")
+                        Text("Inactive")
+                    }
                 }
                 .padding(.top, 12)
                 Spacer()
@@ -54,7 +55,7 @@ struct ContentView: View {
                     Spacer()
                     
                     Button(action: {
-                        viewModel.clearHabits()
+//                        viewModel.clearHabits()
                     }) {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
                             .resizable()
@@ -86,7 +87,10 @@ struct ContentView: View {
             .background(Color.gray.opacity(0.1)) // Optional background color for better visibility
             .sheet(isPresented: $showingAddHabitView) {
                 NavigationView {
-                    AddHabitView(isPresented: $showingAddHabitView, viewModel: viewModel)
+                    AddHabitView() {
+                        showingAddHabitView = false
+                        viewModel.updateList()
+                    }
                 }
             }
         }

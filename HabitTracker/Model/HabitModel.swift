@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Habit: Identifiable {
-    let id = UUID()
+    let id: UUID
     let imageName: String
     var title: String
     var isSelected: Bool
     var isActive = true
-    var description: String?
+    var description: String = ""
 }
 
 struct CreatedHabit: Identifiable {

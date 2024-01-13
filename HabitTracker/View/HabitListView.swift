@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct HabitListView: View {
-    let title: String
-    let habits: [Habit]
-    @ObservedObject var viewModel = HabitTrackerViewModel()
+    @Binding var habits: [Habit]
+    let onDeleteHabit: (Habit) -> Void
 
     var body: some View {
         List {
-            ForEach(habits) { habit in
-                NavigationLink(destination: HabitDetailView(description: habit.description ?? "")) {
-                    HabitRowView(habit: habit)  
+            ForEach($habits) { habit in
+                NavigationLink(destination: HabitDetailView(description: habit.description.wrappedValue)) {
+                    HabitRowView(habit: habit, onDeleteHabit: onDeleteHabit)
                 }
                 .listRowBackground(Color.clear)
             }

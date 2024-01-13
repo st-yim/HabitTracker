@@ -40,6 +40,11 @@
 		BCBB95522B49835A0040EADA /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB95512B49835A0040EADA /* FirebaseStorage */; };
 		BCBB95542B49835A0040EADA /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB95532B49835A0040EADA /* FirebaseStorageCombine-Community */; };
 		BCBB95562B49876C0040EADA /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95552B49876C0040EADA /* AuthManager.swift */; };
+		BCBB95592B4C48810040EADA /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB95582B4C48810040EADA /* Realm */; };
+		BCBB955B2B4C48810040EADA /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BCBB955A2B4C48810040EADA /* RealmSwift */; };
+		BCBB955F2B4C4B9A0040EADA /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB955D2B4C4B9A0040EADA /* RealmBase.swift */; };
+		BCBB95602B4C4B9A0040EADA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB955E2B4C4B9A0040EADA /* RealmManager.swift */; };
+		BCBB95622B4C547E0040EADA /* RealmHabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95612B4C547E0040EADA /* RealmHabitModel.swift */; };
 		FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */; };
 		FABE833E2B47634E00996F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833D2B47634E00996F85 /* ContentView.swift */; };
 		FABE834A2B4763C100996F85 /* HabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83492B4763C100996F85 /* HabitModel.swift */; };
@@ -48,7 +53,6 @@
 		FABE83502B47ACD300996F85 /* HabitDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE834F2B47ACD300996F85 /* HabitDetailView.swift */; };
 		FABE83522B47AF2B00996F85 /* HabitListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83512B47AF2B00996F85 /* HabitListView.swift */; };
 		FABE83542B488A2600996F85 /* CreateHabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83532B488A2600996F85 /* CreateHabitView.swift */; };
-		FABE83562B48FC7000996F85 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83552B48FC7000996F85 /* SectionView.swift */; };
 		FABE83582B48FC8A00996F85 /* HabitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE83572B48FC8A00996F85 /* HabitRowView.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +64,9 @@
 		BCBB951C2B49809F0040EADA /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
 		BCBB951E2B4982EC0040EADA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BCBB95552B49876C0040EADA /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		BCBB955D2B4C4B9A0040EADA /* RealmBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
+		BCBB955E2B4C4B9A0040EADA /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		BCBB95612B4C547E0040EADA /* RealmHabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHabitModel.swift; sourceTree = "<group>"; };
 		FABE83382B47634E00996F85 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
 		FABE833D2B47634E00996F85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,7 +76,6 @@
 		FABE834F2B47ACD300996F85 /* HabitDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailView.swift; sourceTree = "<group>"; };
 		FABE83512B47AF2B00996F85 /* HabitListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitListView.swift; sourceTree = "<group>"; };
 		FABE83532B488A2600996F85 /* CreateHabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateHabitView.swift; sourceTree = "<group>"; };
-		FABE83552B48FC7000996F85 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		FABE83572B48FC8A00996F85 /* HabitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +99,8 @@
 				BCBB954A2B49835A0040EADA /* FirebaseMessaging in Frameworks */,
 				BCBB95462B49835A0040EADA /* FirebaseInstallations in Frameworks */,
 				BCBB95402B49835A0040EADA /* FirebaseFunctionsCombine-Community in Frameworks */,
+				BCBB95592B4C48810040EADA /* Realm in Frameworks */,
+				BCBB955B2B4C48810040EADA /* RealmSwift in Frameworks */,
 				BCBB95382B49835A0040EADA /* FirebaseFirestore in Frameworks */,
 				BCBB95542B49835A0040EADA /* FirebaseStorageCombine-Community in Frameworks */,
 				BCBB952A2B49835A0040EADA /* FirebaseAppCheck in Frameworks */,
@@ -110,6 +118,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BCBB955C2B4C4B900040EADA /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				BCBB955D2B4C4B9A0040EADA /* RealmBase.swift */,
+				BCBB955E2B4C4B9A0040EADA /* RealmManager.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
 		FABE832F2B47634E00996F85 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +146,7 @@
 		FABE833A2B47634E00996F85 /* HabitTracker */ = {
 			isa = PBXGroup;
 			children = (
+				BCBB955C2B4C4B900040EADA /* Realm */,
 				BCBB951E2B4982EC0040EADA /* GoogleService-Info.plist */,
 				FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */,
 				FABE833D2B47634E00996F85 /* ContentView.swift */,
@@ -154,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				FABE83492B4763C100996F85 /* HabitModel.swift */,
+				BCBB95612B4C547E0040EADA /* RealmHabitModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -166,7 +185,6 @@
 				FABE834F2B47ACD300996F85 /* HabitDetailView.swift */,
 				FABE83512B47AF2B00996F85 /* HabitListView.swift */,
 				FABE83572B48FC8A00996F85 /* HabitRowView.swift */,
-				FABE83552B48FC7000996F85 /* SectionView.swift */,
 				BCBB95142B497CD30040EADA /* LoginView.swift */,
 				BCBB95182B497EF90040EADA /* SignUpView.swift */,
 				BCBB951C2B49809F0040EADA /* ErrorView.swift */,
@@ -217,6 +235,8 @@
 				BCBB954F2B49835A0040EADA /* FirebaseRemoteConfigSwift */,
 				BCBB95512B49835A0040EADA /* FirebaseStorage */,
 				BCBB95532B49835A0040EADA /* FirebaseStorageCombine-Community */,
+				BCBB95582B4C48810040EADA /* Realm */,
+				BCBB955A2B4C48810040EADA /* RealmSwift */,
 			);
 			productName = HabitTracker;
 			productReference = FABE83382B47634E00996F85 /* HabitTracker.app */;
@@ -248,6 +268,7 @@
 			mainGroup = FABE832F2B47634E00996F85;
 			packageReferences = (
 				BCBB95202B49835A0040EADA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				BCBB95572B4C48810040EADA /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = FABE83392B47634E00996F85 /* Products */;
 			projectDirPath = "";
@@ -277,13 +298,15 @@
 				FABE834A2B4763C100996F85 /* HabitModel.swift in Sources */,
 				FABE833E2B47634E00996F85 /* ContentView.swift in Sources */,
 				FABE83582B48FC8A00996F85 /* HabitRowView.swift in Sources */,
-				FABE83562B48FC7000996F85 /* SectionView.swift in Sources */,
 				FABE83502B47ACD300996F85 /* HabitDetailView.swift in Sources */,
+				BCBB95602B4C4B9A0040EADA /* RealmManager.swift in Sources */,
 				FABE834C2B47672E00996F85 /* HabitTrackerViewModel.swift in Sources */,
 				BCBB951B2B497F380040EADA /* SignUpViewModel.swift in Sources */,
 				FABE83522B47AF2B00996F85 /* HabitListView.swift in Sources */,
 				FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */,
+				BCBB955F2B4C4B9A0040EADA /* RealmBase.swift in Sources */,
 				BCBB95562B49876C0040EADA /* AuthManager.swift in Sources */,
+				BCBB95622B4C547E0040EADA /* RealmHabitModel.swift in Sources */,
 				BCBB95192B497EF90040EADA /* SignUpView.swift in Sources */,
 				BCBB951D2B49809F0040EADA /* ErrorView.swift in Sources */,
 				BCBB95172B497DED0040EADA /* LoginViewModel.swift in Sources */,
@@ -509,6 +532,14 @@
 				minimumVersion = 10.19.1;
 			};
 		};
+		BCBB95572B4C48810040EADA /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -641,6 +672,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BCBB95202B49835A0040EADA /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		BCBB95582B4C48810040EADA /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCBB95572B4C48810040EADA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		BCBB955A2B4C48810040EADA /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BCBB95572B4C48810040EADA /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

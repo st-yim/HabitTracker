@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HabitRowView: View {
-    let habit: Habit
-    @ObservedObject var viewModel = HabitTrackerViewModel()
+    @Binding var habit: Habit
+    let onDeleteHabit: (Habit) -> Void
     
     var body: some View {
         VStack {
@@ -30,16 +30,17 @@ struct HabitRowView: View {
                     .foregroundColor(.white)
                     .cornerRadius(8)
                     .shadow(radius: 4)
+                    .contentShape(Rectangle())
                 
                 Spacer()
                 
-                Button(action: {
-                    viewModel.deleteHabit(habit)
-                }) {
-                    Image(systemName: "trash")
-                        .foregroundColor(.red)
-                }
+                Image(systemName: "trash")
+                    .foregroundColor(.red)
                 .padding(8)
+                .onTapGesture {
+                    onDeleteHabit(habit)
+                }
+                .contentShape(Rectangle())
             }
             
         }
@@ -47,5 +48,5 @@ struct HabitRowView: View {
 }
 
 #Preview {
-    HabitRowView(habit: Habit(imageName: "moon.fill", title: "Sleep", isSelected: true))
+    HabitRowView(habit: .constant(Habit(id: UUID(), imageName: "moon.fill", title: "Sleep", isSelected: true) ), onDeleteHabit: { _ in})
 }
