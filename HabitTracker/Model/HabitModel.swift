@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 struct Habit: Identifiable {
-    let id = UUID()
+    let id: UUID
     let imageName: String
     var title: String
     var isSelected: Bool
     var isActive = true
-    var description: String?
+    var habitDescription: String = ""
 }
 
 struct CreatedHabit: Identifiable {
@@ -23,7 +23,7 @@ struct CreatedHabit: Identifiable {
     var title: String
     var isSelected: Bool
     var isActive = true
-    var description: String?
+    var habitDescription: String?
 }
 
 

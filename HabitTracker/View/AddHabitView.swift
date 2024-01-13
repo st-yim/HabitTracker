@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct AddHabitView: View {
-    @Binding var isPresented: Bool
-    @ObservedObject var viewModel: HabitTrackerViewModel
+    
+    @StateObject var viewModel = HabitTrackerViewModel()
+    let onHabitAdded: () -> Void
     
     @State private var habits: [Habit] = [
-        Habit(imageName: "sunrise.fill", title: "Start the Day Right", isSelected: false),
-        Habit(imageName: "figure.walk.circle", title: "Move Your Body", isSelected: false),
-        Habit(imageName: "leaf", title: "Eat Well", isSelected: false),
-        Habit(imageName: "book.fill", title: "Learn Something", isSelected: false),
-        Habit(imageName: "hand.thumbsup.fill", title: "Say Thanks", isSelected: false),
-        Habit(imageName: "list.bullet", title: "Get Organized", isSelected: false),
-        Habit(imageName: "wind", title: "Relax Your Mind", isSelected: false),
-        Habit(imageName: "moon.stars.fill", title: "Sleep Enough", isSelected: false),
-        Habit(imageName: "person.2.fill", title: "Spend Time with People", isSelected: false),
-        Habit(imageName: "clock.fill", title: "Think About Your Day", isSelected: false)
+        Habit(id: UUID(), imageName: "sunrise.fill", title: "Start the Day Right", isSelected: false),
+        Habit(id: UUID(), imageName: "figure.walk.circle", title: "Move Your Body", isSelected: false),
+        Habit(id: UUID(), imageName: "leaf", title: "Eat Well", isSelected: false),
+        Habit(id: UUID(), imageName: "book.fill", title: "Learn Something", isSelected: false),
+        Habit(id: UUID(), imageName: "hand.thumbsup.fill", title: "Say Thanks", isSelected: false),
+        Habit(id: UUID(), imageName: "list.bullet", title: "Get Organized", isSelected: false),
+        Habit(id: UUID(), imageName: "wind", title: "Relax Your Mind", isSelected: false),
+        Habit(id: UUID(), imageName: "moon.stars.fill", title: "Sleep Enough", isSelected: false),
+        Habit(id: UUID(), imageName: "person.2.fill", title: "Spend Time with People", isSelected: false),
+        Habit(id: UUID(), imageName: "clock.fill", title: "Think About Your Day", isSelected: false)
     ]
     
     @State private var isCreatingCustomHabit = false
@@ -92,10 +93,7 @@ struct AddHabitView: View {
                             Button("Add") {
                                 // Logic to add custom habit
                                 viewModel.addHabit(title: customHabitName, imageName: "info.circle")
-                                isPresented = false
-//                                withAnimation {
-//                                    showCreateHabitView.toggle()
-//                                }
+                                onHabitAdded()
                             }
                             .foregroundColor(.white)
                             .padding()
@@ -118,7 +116,7 @@ struct AddHabitView: View {
                     for habit in selectedHabits {
                         viewModel.addHabit(title: habit.title, imageName: habit.imageName)
                     }
-                    isPresented = false
+                    onHabitAdded()
                 }) {
                     Text("Add Selected")
                         .foregroundColor(.white)
@@ -140,7 +138,7 @@ struct AddHabitView: View {
             .navigationBarTitle("Add Habits", displayMode: .inline)
             .navigationBarItems(leading:
                 Button(action: {
-                isPresented = false
+                onHabitAdded()
             }) {
                 Image(systemName: "chevron.left")
                 Text("Back")
