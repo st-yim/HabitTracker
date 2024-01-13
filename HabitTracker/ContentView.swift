@@ -12,6 +12,7 @@ struct ContentView: View {
     @StateObject var viewModel = HabitTrackerViewModel()
     @State private var showClearAllAlert = false
     @State private var showDeletHabitAlert = false
+    @State private var showLogoutHabitAlert = false
     @State private var habitToDelete: Habit = Habit(id: UUID(), imageName: "", title: "", isSelected: false)
     
     var body: some View {
@@ -95,7 +96,7 @@ struct ContentView: View {
                     
                     // Signout Button
                     Button(action: {
-                        AuthManager.shared.signout()
+                        showLogoutHabitAlert = true
                     }) {
                         Image(systemName: "rectangle.portrait.and.arrow.forward")
                             .resizable()
@@ -103,6 +104,16 @@ struct ContentView: View {
                             .frame(width: 30, height: 30)
                             .foregroundColor(.red)
                             .padding()
+                    }
+                    .alert(isPresented: $showLogoutHabitAlert) {
+                        Alert(
+                            title: Text("Logout"),
+                            message: Text("Are you sure you want to logout?"),
+                            primaryButton: .destructive(Text("Logout")) {
+                                AuthManager.shared.signout()
+                            },
+                            secondaryButton: .cancel(Text("Cancel"))
+                        )
                     }
                     
                 }
