@@ -17,7 +17,10 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
+            VStack(alignment: .leading) {
+                Text("Hi \(viewModel.userName)")
+                    .font(.headline)
+                
                 TabView {
                     HabitListView(habits: $viewModel.activeHabits, onDeleteHabit: { habit in
                         habitToDelete = habit

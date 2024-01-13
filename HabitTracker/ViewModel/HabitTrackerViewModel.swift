@@ -7,12 +7,18 @@
 
 import Combine
 import SwiftUI
+import FirebaseAuth
+import FirebaseDatabaseInternal
 
 class HabitTrackerViewModel: ObservableObject {
 
     @Published var activeHabits: [Habit] = []
     @Published var inactiveHabits: [Habit] = []
+    @Published var userName: String = "User"
     
+    init() {
+        fetchUserName()
+    }
 }
 
 //MARK: - Habit operations
@@ -48,5 +54,24 @@ extension HabitTrackerViewModel {
     func clearAllHabit() {
         RealmManager.shared.deleteAll()
         updateList()
+    }
+}
+
+//MARK: - Firebase operations
+extension HabitTrackerViewModel {
+    
+    func fetchUserName() {
+        guard let userId = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        Database.database().reference().child("users").child(userId).observeSingleEvent(of: .value) { snapshot, _  in
+            if let userData = snapshot.value as? [String: Any],
+               let fetchedUserName = userData["userName"] as? String {
+                self.userName = fetchedUserName
+            } else {
+                self.userName = "User"
+            }
+        }
     }
 }

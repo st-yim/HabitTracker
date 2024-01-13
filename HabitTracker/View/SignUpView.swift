@@ -21,7 +21,12 @@ struct SignUpView: View {
                 .padding()
 
             VStack(alignment: .leading, spacing: 16) {
-
+                TextField("Your name", text: $viewModel.userName)
+                    .padding()
+                    .keyboardType(.emailAddress)
+                    .background(Color.gray.opacity(0.1))
+                    .cornerRadius(8.0)
+                
                 TextField("Email", text: $viewModel.email)
                     .padding()
                     .keyboardType(.emailAddress)

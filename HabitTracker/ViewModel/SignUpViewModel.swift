@@ -7,10 +7,12 @@
 
 import Foundation
 import FirebaseAuth
+import FirebaseDatabaseInternal
 
 class SignUpViewModel: ObservableObject {
     
     @Published var email = ""
+    @Published var userName = ""
     @Published var password = ""
     @Published var confirmPassword = ""
     @Published var errorMessage: String?
@@ -31,8 +33,17 @@ class SignUpViewModel: ObservableObject {
                 errorMessage = error.localizedDescription
                 return
             }
-            if let _ = authResult?.user {
-                AuthManager.shared.isLoggedIn = true
+            if let user = authResult?.user {
+                let userData = ["userName": self.userName]
+                Database.database().reference().child("users").child(user.uid).setValue(userData) { (error, ref) in
+                    if let error = error {
+                        self.errorMessage = error.localizedDescription
+                        return
+                    }
+                    
+                    // Set isLoggedIn to true after successful sign-up and data storage
+                    AuthManager.shared.isLoggedIn = true
+                }
             }
         }
     }

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseDatabaseInternal
 
 @main
 struct HabitTrackerApp: App {
@@ -29,6 +30,7 @@ struct HabitTrackerApp: App {
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
         AuthManager.shared.checkAuthenticationStatus()
         return true
     }
