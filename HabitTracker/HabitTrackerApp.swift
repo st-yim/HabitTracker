@@ -13,6 +13,7 @@ import FirebaseDatabaseInternal
 struct HabitTrackerApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @ObservedObject var authManager = AuthManager.shared
+    @State private var showSplashScreen = true
     
     var body: some Scene {
         WindowGroup {
@@ -20,7 +21,11 @@ struct HabitTrackerApp: App {
                 ContentView()
             } else {
                 NavigationView {
-                    LoginView()
+                    if showSplashScreen {
+                        SplashScreenView(isPresented: $showSplashScreen)
+                    } else {
+                        LoginView()
+                    }
                 }
             }
         }
