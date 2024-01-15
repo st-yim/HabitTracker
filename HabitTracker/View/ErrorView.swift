@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ErrorView: View {
+    
     let message: String
     let onClose: () -> Void
 

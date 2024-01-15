@@ -8,41 +8,7 @@
 import SwiftUI
 
 struct HabitRowView: View {
-<<<<<<< HEAD
-    let habit: Habit
-    @ObservedObject var viewModel = HabitTrackerViewModel()
-
-    var body: some View {
-        HStack {
-            Image(systemName: habit.imageName)
-                .foregroundColor(.blue)
-                .font(.title)
-            
-            Text(habit.title)
-                .font(.title3)
-                .frame(maxWidth: .infinity)
-                .padding()
-                .background(
-                    RoundedRectangle(cornerRadius: 8)
-                        .foregroundColor(habit.isActive ? .green : .gray) // Set the background based on isActive state
-                )
-                .cornerRadius(8)
-                .shadow(radius: 4)
-            
-            NavigationLink(destination:
-                HabitDetailView(habit: habit)) {
-            }
-
-            Spacer()
-
-            Button(action: {
-                viewModel.deleteHabit(habit)
-            }) {
-                Image(systemName: "trash")
-                    .foregroundColor(.red)
-            }
-            .padding(.trailing, 8)
-=======
+    
     var habit: Habit
     let onDeleteHabit: (Habit) -> Void
     let onActiveInactiveHabit: (Habit) -> Void
@@ -98,15 +64,10 @@ struct HabitRowView: View {
             Image(systemName: "chevron.right")
                 .foregroundColor(habit.isActive ? .blue : .gray) // Set the background based on isActive state
                 .padding(.trailing, 8)
->>>>>>> develop
         }
     }
 }
 
 #Preview {
-<<<<<<< HEAD
-    HabitRowView(habit: Habit(imageName: "moon.fill", title: "Sleep", isSelected: true))
-=======
     HabitRowView(habit: Habit(id: UUID(), imageName: "moon.fill", title: "Sleep", isSelected: true), onDeleteHabit: { _ in}, onActiveInactiveHabit: {_ in})
->>>>>>> develop
 }

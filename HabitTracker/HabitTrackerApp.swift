@@ -6,17 +6,6 @@
 //
 
 import SwiftUI
-<<<<<<< HEAD
-
-@main
-struct HabitTrackerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-    }
-}
-=======
 import FirebaseCore
 import FirebaseDatabaseInternal
 
@@ -51,4 +40,3 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         return true
     }
 }
->>>>>>> develop

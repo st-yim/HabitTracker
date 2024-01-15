@@ -6,10 +6,10 @@
 //
 
 import Foundation
-
 import Firebase
 
 class AuthManager: ObservableObject {
+    
     @Published var isLoggedIn: Bool = false
    static var shared = AuthManager()
     

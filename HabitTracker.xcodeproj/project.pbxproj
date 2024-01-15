@@ -46,7 +46,7 @@
 		BCBB955F2B4C4B9A0040EADA /* RealmBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB955D2B4C4B9A0040EADA /* RealmBase.swift */; };
 		BCBB95602B4C4B9A0040EADA /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB955E2B4C4B9A0040EADA /* RealmManager.swift */; };
 		BCBB95622B4C547E0040EADA /* RealmHabitModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCBB95612B4C547E0040EADA /* RealmHabitModel.swift */; };
-		FAA4E18A2B54A9CC003C7D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA4E1892B54A9CC003C7D69 /* Assets.xcassets */; };
+		FA17B6332B54EE57003060E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA17B6322B54EE57003060E7 /* Assets.xcassets */; };
 		FAA4E18D2B54B82A003C7D69 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA4E18C2B54B82A003C7D69 /* SplashScreenView.swift */; };
 		FABE833C2B47634E00996F85 /* HabitTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */; };
 		FABE833E2B47634E00996F85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABE833D2B47634E00996F85 /* ContentView.swift */; };
@@ -71,7 +71,7 @@
 		BCBB955D2B4C4B9A0040EADA /* RealmBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmBase.swift; sourceTree = "<group>"; };
 		BCBB955E2B4C4B9A0040EADA /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		BCBB95612B4C547E0040EADA /* RealmHabitModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmHabitModel.swift; sourceTree = "<group>"; };
-		FAA4E1892B54A9CC003C7D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA17B6322B54EE57003060E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAA4E18C2B54B82A003C7D69 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
 		FABE83382B47634E00996F85 /* HabitTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HabitTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTrackerApp.swift; sourceTree = "<group>"; };
@@ -157,7 +157,7 @@
 				FABE833B2B47634E00996F85 /* HabitTrackerApp.swift */,
 				FABE833D2B47634E00996F85 /* ContentView.swift */,
 				BCBB95552B49876C0040EADA /* AuthManager.swift */,
-				FAA4E1892B54A9CC003C7D69 /* Assets.xcassets */,
+				FA17B6322B54EE57003060E7 /* Assets.xcassets */,
 				FABE83592B4909D900996F85 /* ViewModel */,
 				FABE835A2B4909ED00996F85 /* Model */,
 				FABE835B2B490A2D00996F85 /* View */,
@@ -293,7 +293,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAA4E18A2B54A9CC003C7D69 /* Assets.xcassets in Resources */,
+				FA17B6332B54EE57003060E7 /* Assets.xcassets in Resources */,
 				BCBB951F2B4982EC0040EADA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

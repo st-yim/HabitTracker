@@ -8,40 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var showingAddHabitView = false
-<<<<<<< HEAD
-    @ObservedObject var viewModel = HabitTrackerViewModel()
     
-    var activeHabits: [Habit] {
-       viewModel.habits.filter { $0.isActive }
-    }
-
-    var inactiveHabits: [Habit] {
-       viewModel.habits.filter { !$0.isActive }
-    }
-
-    var body: some View {
-        NavigationView {
-            VStack {
-                TabView {
-                    HabitListView(title: "Active", habits: activeHabits)
-                        .tabItem {
-                            Image(systemName: "bolt.fill")
-                            Text("Active")
-                        }
-
-                    HabitListView(title: "Inactive", habits: inactiveHabits)
-                        .tabItem {
-                            Image(systemName: "stop.fill")
-                            Text("Inactive")
-                        }
-                }
-                Spacer()
-
-                HStack {
-                    Spacer()
-
-=======
+    @State private var showingAddHabitView = false
     @StateObject var viewModel = HabitTrackerViewModel()
     @State private var showClearAllAlert = false
     @State private var showDeletHabitAlert = false
@@ -96,7 +64,6 @@ struct ContentView: View {
                 HStack {
                     Spacer()
                     
->>>>>>> develop
                     Button(action: {
                         showingAddHabitView.toggle()
                     }) {
@@ -106,19 +73,11 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.green)
                     }
-<<<<<<< HEAD
-
-                    Spacer()
-
-                    Button(action: {
-                        viewModel.clearHabits()
-=======
                     
                     Spacer()
                     
                     Button(action: {
                         showClearAllAlert = true
->>>>>>> develop
                     }) {
                         Image(systemName: "arrow.counterclockwise.circle.fill")
                             .resizable()
@@ -126,22 +85,7 @@ struct ContentView: View {
                             .frame(width: 50, height: 50)
                             .foregroundColor(.blue)
                     }
-<<<<<<< HEAD
-
-                    Spacer()
-                }
-                .padding()
-            }
-            .navigationBarTitle("Habit Tracker")
-            .padding()
-            .sheet(isPresented: $showingAddHabitView) {
-                NavigationView {
-                    AddHabitView(isPresented: $showingAddHabitView, viewModel: viewModel)
-                }
-            }
-        }
-        .background(Color.gray.opacity(0.1)) // Optional background color for better visibility
-=======
+                    
                     .alert(isPresented: $showClearAllAlert) {
                         Alert(
                             title: Text("Clear All Habits"),
@@ -193,7 +137,6 @@ struct ContentView: View {
                 }
             }
         }
->>>>>>> develop
     }
 }
 

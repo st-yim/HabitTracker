@@ -9,21 +9,11 @@ import SwiftUI
 
 struct HabitDetailView: View {
     
-<<<<<<< HEAD
-    @State private var description: String = ""
-    let habit: Habit
-=======
     @StateObject var viewModel: HabitDetailViewModel
->>>>>>> develop
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {
         VStack {
-<<<<<<< HEAD
-            TextField("Enter Description", text: $description)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding()
-=======
             ZStack(alignment: .topLeading) {
                 
                 TextEditor(text: $viewModel.habitDescription)
@@ -63,7 +53,6 @@ struct HabitDetailView: View {
         }
         .onAppear {
             viewModel.setUpDescription()
->>>>>>> develop
         }
         .padding()
         .navigationBarTitle(Text(""), displayMode: .inline)
@@ -71,9 +60,5 @@ struct HabitDetailView: View {
 }
 
 #Preview {
-<<<<<<< HEAD
-    HabitDetailView(habit: Habit(imageName: "moon.fill", title: "Hola", isSelected: false, isActive: false))
-=======
     HabitDetailView(viewModel: .init(habit: Habit(id: UUID(), imageName: "", title: "", isSelected: true, isActive: true, habitDescription: "")))
->>>>>>> develop
 }

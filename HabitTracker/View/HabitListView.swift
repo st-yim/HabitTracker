@@ -8,25 +8,7 @@
 import SwiftUI
 
 struct HabitListView: View {
-<<<<<<< HEAD
-    let title: String
-    let habits: [Habit]
-    @ObservedObject var viewModel = HabitTrackerViewModel()
-
-    var body: some View {
-        NavigationView {
-            List {
-                ForEach(habits) { habit in
-                    NavigationLink(destination: HabitDetailView(habit: habit)) {
-                        HabitRowView(habit: habit)
-                    }
-                }
-            }
-            .navigationBarTitle(title)
-            .navigationBarTitleDisplayMode(.inline)
-            .font(.custom("Helvetica Neue", size: 20))
-        }
-=======
+    
     @Binding var habits: [Habit]
     let onDeleteHabit: (Habit) -> Void
     let onActiveInactiveHabit: (Habit) -> Void
@@ -57,6 +39,5 @@ struct HabitListView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(.gray.opacity(0.1))
->>>>>>> develop
     }
 }

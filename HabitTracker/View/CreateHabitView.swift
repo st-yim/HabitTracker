@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CreateHabitView: View {
+    
     @Binding var isPresented: Bool
     @ObservedObject var viewModel: HabitTrackerViewModel
     @Binding var selectedImageName: String?
