@@ -1,6 +1,6 @@
 # TrackIt: Habit Tracker App
 
-<img width="256" alt="mac512" src="https://github.com/st-yim/HabitTracker/assets/129474155/1663ce6e-fdcd-4dad-9df3-12fd7ecf6bbf">
+<img width="256" alt="mac512" src="https://github.com/st-yim/TrackIt-HabitTracker/assets/129474155/a55b23ee-8fbd-4340-a905-5d5c5081c15a">
 
 Welcome to TrackIt: Habit Tracker, the premier app for cultivating positive habits and tracking your progress effortlessly!
 
