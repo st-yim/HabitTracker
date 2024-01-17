@@ -60,4 +60,4 @@ No surroundings data, such as environment scanning, is collected by TrackIt: Hab
 ### Body:
 No body-related data, such as hands, head movements, or other data types, is collected by TrackIt: Habit Tracker.
 
-We respect your privacy and are committed to protecting your personal information. If you have any questions or concerns regarding our privacy practices, please contact us at ### steven.yim17@gmail.com.
+We respect your privacy and are committed to protecting your personal information. If you have any questions or concerns regarding our privacy practices, please contact us at steven.yim17@gmail.com.
