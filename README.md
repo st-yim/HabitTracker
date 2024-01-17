@@ -1,8 +1,8 @@
-# HabitTracker Elite App
+# TrackIt: Habit Tracker App
 
 <img width="256" alt="mac512" src="https://github.com/st-yim/HabitTracker/assets/129474155/1663ce6e-fdcd-4dad-9df3-12fd7ecf6bbf">
 
-Welcome to HabitTracker Elite, the premier app for cultivating positive habits and tracking your progress effortlessly!
+Welcome to TrackIt: Habit Tracker, the premier app for cultivating positive habits and tracking your progress effortlessly!
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -14,7 +14,7 @@ Welcome to HabitTracker Elite, the premier app for cultivating positive habits a
 
 ## Introduction
 
-HabitTracker Elite is a cutting-edge application designed to empower users in building and maintaining positive habits. Whether you're aiming for personal development, health improvement, or lifestyle changes, this app provides elite features for effective habit tracking.
+TrackIt: Habit Tracker is a cutting-edge application designed to empower users in building and maintaining positive habits. Whether you're aiming for personal development, health improvement, or lifestyle changes, this app provides elite features for effective habit tracking.
 
 ## Features
 
@@ -26,7 +26,7 @@ HabitTracker Elite is a cutting-edge application designed to empower users in bu
 
 ## Getting Started
 
-To embark on your habit-building journey with HabitTracker Elite, follow these simple steps:
+To embark on your habit-building journey with TrackIt: Habit Tracker, follow these simple steps:
 
 1. **Installation:**
    - Download the app from [App Store].
@@ -43,7 +43,7 @@ To embark on your habit-building journey with HabitTracker Elite, follow these s
 
 2. **Daily Tracking:**
    - Mark your habit as completed each day.
-   - HabitTracker Elite will intelligently track your progress and streaks.
+   - TrackIt: Habit Tracker will intelligently track your progress and streaks.
 
 3. **Reminders:**
    - Set reminders to ensure you never miss a habit.
@@ -53,7 +53,7 @@ To embark on your habit-building journey with HabitTracker Elite, follow these s
 
 ## Contributing
 
-Thank you for your interest in HabitTracker Elite. At this time, we are not accepting external contributions or feature requests. The development of this project is currently handled internally.
+Thank you for your interest in TrackIt: Habit Tracker. At this time, we are not accepting external contributions or feature requests. The development of this project is currently handled internally.
 
 ## License
 
