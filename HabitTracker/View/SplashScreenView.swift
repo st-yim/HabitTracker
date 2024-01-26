@@ -23,9 +23,9 @@ struct SplashScreenView: View {
                 .ignoresSafeArea()
             
             ZStack {
-                Image(systemName: "heart.text.square.fill")
+                Image(systemName: "list.star")
                     .font(.system(size: 65))
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(.white)
                     .opacity(systemImageOpacity)
             }
 
