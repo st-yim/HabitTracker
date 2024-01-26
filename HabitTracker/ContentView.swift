@@ -103,7 +103,7 @@ struct ContentView: View {
                     Button(action: {
                         showLogoutHabitAlert = true
                     }) {
-                        Image(systemName: "rectangle.portrait.and.arrow.forward")
+                        Image(systemName: "rectangle.portrait.and.arrow.right")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
