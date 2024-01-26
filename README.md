@@ -30,7 +30,7 @@ TrackIt: Habit Tracker is a cutting-edge application designed to empower users i
 To embark on your habit-building journey with TrackIt: Habit Tracker, follow these simple steps:
 
 1. **Installation:**
-   - Download the app from [App Store].
+   - Download the app from: https://apps.apple.com/us/app/trackit-habit-tracker/id6476233525.
    - Install the app on your device.
 
 2. **Setup:**
