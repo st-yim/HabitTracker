@@ -1,6 +1,6 @@
 # Privacy Policy for TrackIt: Habit Tracker
 
-## Last updated: 01/17/2024
+## Last updated: 01/25/2024
 
 Thank you for choosing TrackIt: Habit Tracker! This Privacy Policy outlines how we handle user data in our mobile application.
 
@@ -19,6 +19,12 @@ Data collected by TrackIt: Habit Tracker does not fall under regulated financial
 
 ### Health Research Disclosure:
 TrackIt: Habit Tracker does not collect data as part of a health research study, and therefore, no additional disclosure is required in this category.
+
+### Account Deletion Feature:
+Optionally, the app provides a button that allows users to delete their account. By utilizing this feature, all associated user data, including name, password, and email, will be permanently erased from the app's data storage.
+
+**User Data Privacy:**
+It's important to note that, as the app does not operate in a highly-regulated industry, the account deletion process doesn't mandate users to engage in additional customer service resources, such as making a phone call or sending an email, to complete the account deletion. This approach aims to provide users with a seamless and straightforward experience in managing their account preferences.
 
 ### Contact Info:
 - Name (Including first or last name)
