@@ -14,6 +14,7 @@ struct ContentView: View {
     @State private var showClearAllAlert = false
     @State private var showDeletHabitAlert = false
     @State private var showLogoutHabitAlert = false
+    @State private var showDeleteAccountAlert = false
     @State private var habitToDelete: Habit = Habit(id: UUID(), imageName: "", title: "", isSelected: false)
     
     var body: some View {
@@ -62,6 +63,34 @@ struct ContentView: View {
                 Spacer()
                 
                 HStack {
+                    // Account Deletion Button
+                    Button(action: {
+                        showDeleteAccountAlert = true
+                    }) {
+                        Image(systemName: "person.badge.minus")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    .alert(isPresented: $showDeleteAccountAlert) {
+                        Alert(
+                            title: Text("Delete Account"),
+                            message: Text("Are you sure you want to delete your account?"),
+                            primaryButton: .destructive(Text("Delete")) {
+                                Task {
+                                    do {
+                                        try await AuthManager.shared.deleteAccount()
+                                    } catch {
+                                        print("Error deleting account: \(error)")
+                                    }
+                                }
+                            },
+                            secondaryButton: .cancel(Text("Cancel"))
+                        )
+                    }
+                    
                     Spacer()
                     
                     Button(action: {
