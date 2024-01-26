@@ -23,6 +23,7 @@ TrackIt: Habit Tracker is a cutting-edge application designed to empower users i
 - **Reminders and Notifications:** Set reminders to stay on track and receive notifications for your habits.
 - **Visual Analytics:** Track your habit performance with insightful graphs and statistics.
 - **User-Friendly Interface:** Intuitive design for a seamless user experience.
+- **Account Management:** Easily manage your account with options like "Delete Account" for a personalized experience.
 
 ## Getting Started
 
