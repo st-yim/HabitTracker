@@ -28,4 +28,16 @@ class AuthManager: ObservableObject {
         }
         isLoggedIn = false
     }
+    
+    func deleteAccount() async throws {
+        guard let user = Auth.auth().currentUser else {
+            throw URLError(.badURL)
+        }
+
+        try await user.delete()
+
+        DispatchQueue.main.async {
+            self.isLoggedIn = false
+        }
+    }
 }
